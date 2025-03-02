@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {User} from './core/models/user';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'libreriaAngularCDH';
+  protected readonly User = User;
 }

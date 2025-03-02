@@ -1,0 +1,25 @@
+.container{
+  width: 60%;
+  min-height: 75vh;
+  background-color: white;
+  border-end-end-radius: 4px;
+  border-end-start-radius: 4px;
+}
+.card_v{
+  margin-left: 35%;
+  width: 30%;
+  text-align: center;
+  height: 50px;
+  cursor:pointer;
+  transition: 0.4s;
+}
+
+.card_v:hover{
+  height:60px;
+  font-size: 20px;
+}
+
+h1{
+  margin-bottom: 30px;
+  text-align: center;
+}

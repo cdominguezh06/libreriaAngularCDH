@@ -1,0 +1,27 @@
+
+<div class="animate__animated animated__fadeIn animate__faster">
+  <app-barra-cierre></app-barra-cierre>
+  <div class="container">
+    <br>
+    <div class="card_v" *ngFor="let autor of misAutores" (click)="setSelection(autor)">
+      <p-card>
+        <ng-template pTemplate="header">
+          <br>
+          <span style="font-weight: bold">
+            {{autor.nombre | uppercase}}
+          </span>
+        </ng-template>
+      </p-card>
+    </div>
+    <div class="position_btn_nuevo">
+      <app-nuevo-boton [label]="'Nuevo autor'" [routerLink]="['/main/nuevo-autor']"></app-nuevo-boton>
+    </div>
+    <div class="position_btn_modificar">
+      <app-modificar-boton [label]="'Modificar autor'" [routerLink]="['/main/modificar-autor']" [mostrarSi]="Autor.selectedOnce"></app-modificar-boton>
+    </div>
+    <div class="position_btn_eliminar">
+      <app-eliminar-boton [label]="'Eliminar autor'" (click)="eliminarAutor()" [mostrarSi]="Autor.selectedOnce"></app-eliminar-boton>
+    </div>
+  </div>
+</div>
+

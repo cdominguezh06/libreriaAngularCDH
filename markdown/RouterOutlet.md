@@ -1,3 +1,7 @@
+# Error NG8001: 'router-outlet' is not a known element:
+- Motivo: No se encuentra el router outlet en la plantilla HTML de *PagesComponent*, aunque tengas *RouterModule* importado
+- Solucion: Importar *PagesModule* en *AppModule*
+```typescript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -6,10 +10,7 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {RouterModule} from '@angular/router';
 import {PagesModule} from './pages/pages.module';
-import {SharedModule} from './shared/shared.module';
-import {provideHttpClient} from '@angular/common/http';
-import {ReactiveFormsModule} from "@angular/forms";
-import {ComponentsModule} from './components/components.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,12 +20,10 @@ import {ComponentsModule} from './components/components.module';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    PagesModule,
-    SharedModule,
-    ReactiveFormsModule,
-    ComponentsModule,
+    PagesModule // Agregar PagesModule
   ],
-  providers: [provideHttpClient()],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+```

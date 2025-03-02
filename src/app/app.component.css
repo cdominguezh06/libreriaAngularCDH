@@ -1,0 +1,13 @@
+app-bread-crum{
+  position: fixed;
+  top: 20px;
+  width: 96%;
+  left: 30px;
+  z-index: 1;
+}
+
+app-barra-navegacion{
+  position:fixed;
+  bottom: 5%;
+  width: 100%;
+}

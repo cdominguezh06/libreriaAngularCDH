@@ -1,0 +1,27 @@
+<div class="animate__animated animated__fadeIn animate__faster" style="margin-left: 30%">
+  <app-barra-cierre [anchura]="'60%'"></app-barra-cierre>
+  <div class="container">
+    <h1 style="font-weight: bold">Temas</h1>
+    <br>
+    <div class="card_v" *ngFor="let tema of misTemas" (click)="setSelection(tema)">
+      <p-card>
+        <ng-template pTemplate="header">
+          <br>
+          <span style="font-weight: bold">
+            {{tema.nombre | uppercase}}
+          </span>
+        </ng-template>
+      </p-card>
+      <br>
+    </div>
+    <div class="position_btn_nuevo">
+      <app-nuevo-boton [label]="'Nuevo tema'" [routerLink]="['/main/nuevo-tema']"></app-nuevo-boton>
+    </div>
+    <div class="position_btn_modificar">
+      <app-modificar-boton [label]="'Modificar tema'" [routerLink]="['/main/modificar-tema']" [mostrarSi]="Temas.selectedOnce"></app-modificar-boton>
+    </div>
+    <div class="position_btn_eliminar">
+      <app-eliminar-boton [label]="'Eliminar tema'" (click)="eliminarTema()" [mostrarSi]="Temas.selectedOnce"></app-eliminar-boton>
+    </div>
+  </div>
+</div>

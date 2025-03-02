@@ -1,0 +1,37 @@
+
+<div class="animate__animated animated__fadeIn animate__faster">
+  <app-barra-cierre></app-barra-cierre>
+  <div class="container">
+    <br>
+    <div class="card_v" *ngFor="let libro of misLibros" (click)="setSelection(libro)">
+      <p-card>
+        <ng-template pTemplate="header">
+          <img [src]="getPortada(libro)" class="portada">
+          <br>
+          <span style="font-weight: bold">
+            {{libro.nombre | uppercase}}
+          </span>
+        </ng-template>
+        <p>Autor: {{libro.autor.nombre}}</p>
+        <p>Edicion: {{libro.edicion.nombre}}</p>
+        <p>Formato: {{libro.formato.nombre}}</p>
+        <p>ISBN: {{libro.ISBN}}</p>
+        <p>Precio: {{libro.precio| currency:"€"}}</p>
+        <p>Tema: {{libro.tema.nombre}}</p>
+        <ng-template pTemplate="footer">
+          <p>Cantidad: {{libro.cantidad}}</p>
+        </ng-template>
+      </p-card>
+    </div>
+    <div class="position_btn_nuevo">
+      <app-nuevo-boton [label]="'Nuevo libro'" [routerLink]="['/main/nuevo-libro']"></app-nuevo-boton>
+    </div>
+    <div class="position_btn_modificar">
+      <app-modificar-boton [label]="'Modificar libro'" [routerLink]="['/main/modificar-libro']" [mostrarSi]="Libro.selectedOnce"></app-modificar-boton>
+    </div>
+    <div class="position_btn_eliminar">
+      <app-eliminar-boton [label]="'Eliminar libro'" (click)="eliminarLibro()" [mostrarSi]="Libro.selectedOnce"></app-eliminar-boton>
+    </div>
+  </div>
+</div>
+
