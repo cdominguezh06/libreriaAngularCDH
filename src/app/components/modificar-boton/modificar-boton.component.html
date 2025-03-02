@@ -1,0 +1,6 @@
+<button pButton
+        (click)="$event"
+        *ngIf="User.isAdmin()"
+        [disabled]="!mostrarSi"
+        [label]="label" icon="pi pi-minus" class="p-button-success" style="background-color: blue; border-color: blue"></button>
+

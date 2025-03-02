@@ -1,0 +1,11 @@
+<p-card [style]="{ 'display': 'inline-block', 'width': width, 'margin-left': '2%', 'margin-top': '2%', 'margin-bottom': '2%', 'height': height }">
+  <ng-template pTemplate="header">
+    <br>
+    <div *ngFor="let item of iterable| keyvalue">
+    <span style="font-weight: bold; display: inline-block; width: 100%;">
+            {{item.key | uppercase}}
+            <p style="font-weight: normal; margin: 0;">{{item.value}}</p>
+          </span>
+    </div>
+  </ng-template>
+</p-card>

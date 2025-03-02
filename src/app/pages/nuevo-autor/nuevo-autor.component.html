@@ -1,0 +1,29 @@
+<div class="animate__animated animate__fadein animate__faster">
+  <app-barra-cierre></app-barra-cierre>
+  <div class="container">
+    <div class="container__form" style="">
+      <form [formGroup]="autorFormulario">
+        <div class="input__group">
+          <div class="group_a">
+            <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+              <div class="p_input_group">
+                <span class="p_inputgroup-addon">
+                  <i class="pi pi-book"></i>
+                </span>
+                <input type="text" pInputText placeholder="Nombre" formControlName="nombre">
+              </div>
+              </div>
+            </div>
+          </div>
+      </form>
+      <div>
+        <button
+          [disabled]="!autorFormulario.valid"
+          pButton
+          (click)="guardarAutor()"
+          class="p-button-success"
+          label="Guardar libro"></button>
+      </div>
+    </div>
+  </div>
+</div>

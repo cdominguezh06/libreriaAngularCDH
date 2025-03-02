@@ -1,0 +1,68 @@
+.container {
+  width: 100%;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: auto;
+  background-color: white;
+  border-end-end-radius: 4px;
+  border-end-start-radius: 4px;
+}
+
+.card_v {
+  width: 15%;
+  height: 100px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card_v:hover {
+  width: 19%;
+  font-size: 20px;
+}
+
+.card_v:hover img {
+  width: 120px;
+  height: 170px;
+}
+
+.portada {
+  width: 100px;
+  height: 150px;
+  transition: 0.4s;
+}
+
+.cards_container {
+  display: block;
+  overflow: auto;
+  max-height: 24vh;
+}
+
+app-reusecard {
+  flex: 1 0 auto;
+  padding: 8px;
+  box-sizing: border-box;
+  margin: 8px;
+}
+
+.user {
+  display: block;
+}
+
+.user, .cards_container {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px; /* Adds space between the divs */
+}
+
+.agregarMetodo {
+  padding: 8px;
+  margin: 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  width: 97%;
+}

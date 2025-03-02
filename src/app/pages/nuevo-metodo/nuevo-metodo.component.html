@@ -1,0 +1,8 @@
+<div class="animate__animated animated__fadeIn animate__faster">
+  <app-barra-cierre></app-barra-cierre>
+  <div class="container">
+    <div class="container__form" style="">
+      <app-reuseform  [iterable]="toSave.getJSON()" (salida)="guardarMetodo($event)"></app-reuseform>
+    </div>
+  </div>
+</div>

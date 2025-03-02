@@ -1,0 +1,37 @@
+<div class="animate__animated animate__fadein animate__faster">
+  <app-barra-cierre></app-barra-cierre>
+  <div class="container">
+    <div class="container__form" style="">
+      <form [formGroup]="formulario">
+        <div class="input__group">
+          <div class="group_a">
+            <div style="justify-content: center; margin-bottom: 20px; padding-top: 160px; padding-left: 80vb;">
+              <div class="p_input_group" style="margin-bottom: 3vb">
+                <span class="p_inputgroup-addon">
+                  <i class="pi pi-user"></i>
+                </span>
+                <input type="text" pInputText placeholder="Usuario" formControlName="username">
+              </div>
+              <div class="p_input_group">
+                <span class="p_inputgroup-addon">
+                  <i class="pi pi-key"></i>
+                </span>
+                <input type="password" pInputText placeholder="Contraseña" formControlName="password">
+              </div>
+              <button style="margin-left: 7vb; margin-top:4vb"
+                [disabled]="!formulario.valid"
+                pButton
+                (click)="iniciarSesion()"
+                class="p-button-success"
+                label="Iniciar sesion"></button>
+              <br><br>
+              <a href="/main/signin" style="margin-left: 5vb">¿No estás registrado?</a>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div>
+      </div>
+    </div>
+  </div>
+</div>

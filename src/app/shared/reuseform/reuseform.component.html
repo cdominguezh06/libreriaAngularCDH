@@ -1,0 +1,22 @@
+<form [formGroup]="form">
+  <div class="input__group">
+    <div class="group_a">
+      <div style="display: block; justify-content: center; margin-bottom: 20px; margin-left: 40%; padding-top: 6%;">
+        <div *ngFor="let item of iterable| keyvalue">
+          <div class="p_input_group" style="padding-bottom: 10px">
+                <span class="p_inputgroup-addon">
+                  <i class="pi pi-arrow-right"></i>
+                </span>
+            <input type="text" pInputText placeholder="{{item.key}}" formControlName="{{item.key}}">
+          </div>
+        </div>
+        <button style="margin-left: 5%"
+                [disabled]="!form.valid"
+                pButton
+                (click)="return()"
+                class="p-button-success"
+                label="Guardar metodo"></button>
+      </div>
+    </div>
+  </div>
+</form>

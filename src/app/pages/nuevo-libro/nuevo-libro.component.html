@@ -1,0 +1,108 @@
+<div class="animate__animated animate__fadein animate__faster">
+  <app-barra-cierre></app-barra-cierre>
+  <div class="container">
+    <img [src]="displayedImage" alt="IMG" class="img__preview">
+    <div class="container__form" style="">
+      <form [formGroup]="libroFormulario">
+        <div class="input__group">
+          <div class="group_a">
+            <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+              <div class="p_input_group">
+                <span class="p_inputgroup-addon">
+                  <i class="pi pi-book"></i>
+                </span>
+                  <input type="text" pInputText placeholder="Nombre" formControlName="nombre">
+              </div>
+              <div class="p_input_group">
+                <span class="p_inputgroup-addon">
+                  <i class="pi pi-book"></i>
+                </span>
+                <input type="text" pInputText placeholder="ISBN" formControlName="ISBN">
+              </div>
+              <div class="p_input_group">
+                <span class="p_inputgroup-addon">
+                  <i class="pi pi-book"></i>
+                </span>
+                <input type="text" pInputText placeholder="Precio" formControlName="precio">
+              </div>
+              <div class="p_input_group">
+                <span class="p_inputgroup-addon">
+                  <i class="pi pi-book"></i>
+                </span>
+                <input type="text" pInputText placeholder="Imagen" formControlName="imgName" (input)="updateImage($event)">
+              </div>
+              <div class="p_input_group">
+                <span class="p_inputgroup-addon">
+                  <i class="pi pi-book"></i>
+                </span>
+                <input type="text" pInputText placeholder="Cantidad" formControlName="cantidad">
+              </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+              <div class="p_input_group">
+                <span class="p_inputgroup-addon">
+                  <i class="pi pi-book"></i>
+                </span>
+                <!-- INPUT AUTOR -->
+                <div>
+                  <p-dropdown [options]="autores"
+                              formControlName="autor"
+                              optionLabel="nombre"
+                              placeholder="Autor">
+                  </p-dropdown>
+                </div>
+              </div>
+              <div class="p_input_group">
+                <span class="p_inputgroup-addon">
+                  <i class="pi pi-book"></i>
+                </span>
+                <!-- INPUT EDICION -->
+                <div>
+                  <p-dropdown [options]="ediciones"
+                              formControlName="edicion"
+                              optionLabel="nombre"
+                              placeholder="Edicion">
+                  </p-dropdown>
+                </div>
+              </div>
+              <div class="p_input_group">
+                <span class="p_inputgroup-addon">
+                  <i class="pi pi-book"></i>
+                </span>
+                <!-- INPUT FORMATO -->
+                <div>
+                  <p-dropdown [options]="formatos"
+                              formControlName="formato"
+                              optionLabel="nombre"
+                              placeholder="Formato">
+                  </p-dropdown>
+                </div>
+              </div>
+              <div class="p_input_group">
+                <span class="p_inputgroup-addon">
+                  <i class="pi pi-book"></i>
+                </span>
+                <!-- INPUT TEMA -->
+                <div>
+                  <p-dropdown [options]="temas"
+                              formControlName="tema"
+                              optionLabel="nombre"
+                              placeholder="Tema">
+                  </p-dropdown>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div>
+        <button
+          [disabled]="!libroFormulario.valid"
+          pButton
+          (click)="guardarLibro()"
+          class="p-button-success"
+          label="Guardar libro"></button>
+      </div>
+    </div>
+  </div>
+</div>

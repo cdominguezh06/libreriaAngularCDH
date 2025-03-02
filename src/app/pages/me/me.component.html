@@ -1,0 +1,13 @@
+<div class="animate__animated animated__fadeIn animate__faster">
+  <app-barra-cierre></app-barra-cierre>
+  <div class="container">
+    <div class="user">
+      <h1>Mis datos</h1>
+      <app-reusecard [iterable]="User.getJSON()" [width]="'168vb'"></app-reusecard>
+    </div>
+    <div class="cards_container">
+      <app-reusecard *ngFor="let informacion of informacionesPago" [iterable]="informacion" [width]="'36vb'"></app-reusecard>
+    </div>
+    <app-nuevo-boton class="agregarMetodo" [label]="'Agregar metodo'" [routerLink]="['/main/nuevo-metodo']"></app-nuevo-boton>
+  </div>
+</div>

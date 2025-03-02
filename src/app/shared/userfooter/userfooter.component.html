@@ -1,0 +1,8 @@
+<footer>
+  <div style="display: flex; padding-bottom: 9px; padding-top:4px">
+    <p class="user" *ngIf="User.isLogged()">Bienvenido {{User.getLoggedUser().username}}</p>
+    <button class="logout" *ngIf="User.isLogged()" (click)="logout()">Cerrar sesión</button>
+    <button class="mizona" *ngIf="User.isLogged()" (click)="goToUserZone()">Mi Zona</button>
+  </div>
+  <button class="user" *ngIf="!User.isLogged()" (click)="login()">Identifícate</button>
+</footer>

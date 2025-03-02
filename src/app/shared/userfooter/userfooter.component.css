@@ -1,0 +1,21 @@
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+p{
+  color: white;
+  text-align: center;
+  padding-right: 10vb;
+}
+.logout{
+  position: absolute;
+  right: 1px;
+}
+
+.mizona {
+  position: absolute;
+  right: 100px;
+}
