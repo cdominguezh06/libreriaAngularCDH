@@ -1,0 +1,30 @@
+<div class="libros">
+  <p-card [style]="{'max-height':'50vb'}">
+    <ng-template pTemplate="header">
+      <img [src]="getPortada(libro)" class="portada">
+      <br>
+      <div *ngIf="libro.nombre.length>=20">
+      <span style="font-weight: bold; font-size: 0.5em;">
+            {{ libro.nombre | uppercase }}
+          </span>
+      </div>
+      <div *ngIf="libro.nombre.length<20">
+      <span style="font-weight: bold; font-size: 1em;">
+            {{ libro.nombre | uppercase }}
+          </span>
+      </div>
+      </ng-template>
+    <p>Autor: {{ libro.autor.nombre }}</p>
+    <p>Edicion: {{ libro.edicion.nombre }}</p>
+    <p>Formato: {{ libro.formato.nombre }}</p>
+    <p>ISBN: {{ libro.ISBN }}</p>
+    <p>Precio: {{ libro.precio| currency:"€" }}</p>
+    <p>Tema: {{ libro.tema.nombre }}</p>
+    <ng-template pTemplate="footer">
+      <p>Cantidad: {{ libro.cantidad }}</p>
+      <div *ngIf="showButtons">
+      <app-comprar-botones [libro]="libro"></app-comprar-botones>
+      </div>
+    </ng-template>
+  </p-card>
+</div>

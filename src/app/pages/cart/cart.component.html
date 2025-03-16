@@ -1,0 +1,18 @@
+<div class="animate__animated animated__fadeIn animate__faster">
+  <app-barra-cierre></app-barra-cierre>
+  <div class="container">
+    <h1>Factura</h1>
+    <div class="cards_container">
+      <app-reusecard *ngFor="let elemento of CarritoItem.getIterable()" [iterable]="elemento"
+                     [width]="'36vb'"></app-reusecard>
+    </div>
+    <h1 style="margin-left: 47%">Total: {{calcularTotal()}}€</h1>
+    <button
+      style="margin-left: 45%"
+      [disabled]="CarritoItem.getIterable().length<1"
+      pButton
+      (click)="pagar()"
+      class="p-button-success"
+      label="Procesar pago"></button>
+  </div>
+</div>

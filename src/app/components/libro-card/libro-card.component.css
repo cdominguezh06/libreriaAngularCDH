@@ -1,0 +1,19 @@
+.portada{
+  width: 100px;
+  height: 150px;
+  transition: 0.4s;
+  max-height: 266px;
+  max-width: 150px;
+}
+
+.libros{
+  max-height: 10px;
+}
+
+.custom-card{
+  max-height: 10px;
+}
+.card_v:hover{
+  width:19%;
+  font-size: 20em;
+}

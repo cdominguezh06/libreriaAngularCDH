@@ -1,0 +1,5 @@
+.cards_container {
+  display: block;
+  overflow: auto;
+  max-height: 24vh;
+}
