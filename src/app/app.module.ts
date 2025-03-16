@@ -10,20 +10,24 @@ import {SharedModule} from './shared/shared.module';
 import {provideHttpClient} from '@angular/common/http';
 import {ReactiveFormsModule} from "@angular/forms";
 import {ComponentsModule} from './components/components.module';
+import {SidebarModule} from "primeng/sidebar";
+import {ButtonDirective} from "primeng/button";
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RouterModule,
-    PagesModule,
-    SharedModule,
-    ReactiveFormsModule,
-    ComponentsModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        RouterModule,
+        PagesModule,
+        SharedModule,
+        ReactiveFormsModule,
+        ComponentsModule,
+        SidebarModule,
+        ButtonDirective,
+    ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })

@@ -4,7 +4,6 @@ export class InformacionPago{
   cvv: string;
   nombreTitular: string;
 
-
   constructor() {
     this.numeroTarjeta = "";
     this.fechaExpiracion = "";

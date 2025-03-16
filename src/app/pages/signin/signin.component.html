@@ -1,1 +1,9 @@
-<p>signin works!</p>
+<div class="animate__animated animated__fadeIn animate__faster">
+  <app-barra-cierre></app-barra-cierre>
+  <div class="container">
+    <div class="container__form" style="">
+      <app-reuseform  [iterable]="User.getStruct()" (salida)="guardarMetodo($event)"/>
+      <p style="margin-left: 39%">¿Ya tienes cuenta? <a routerLink="/main/login">Inicia sesión aquí</a></p>
+    </div>
+  </div>
+</div>

@@ -28,4 +28,8 @@ export class UserfooterComponent {
   public goToUserZone() {
     this.router.navigate(['/main/me']);
   }
+
+  public goToCart() {
+    this.router.navigate(['/main/cart']);
+  }
 }

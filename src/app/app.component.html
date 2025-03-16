@@ -1,4 +1,22 @@
 <app-bread-crum></app-bread-crum>
 <router-outlet></router-outlet>
+<div *ngIf="AppComponent.displaySidebar">
+  <p-sidebar [(visible)]="AppComponent.displaySidebar" position="right" [baseZIndex]="10000">
+    <h1 style="margin-left: 17vb; font-weight: bold; font-family: 'Comic Sans MS',serif">Carrito</h1>
+    <div *ngFor="let elemento of CarritoItem.getIterable()">
+      <app-reusecard [iterable]="elemento"
+                     [width]="'36vb'"></app-reusecard>
+      <button pButton
+              (click)="restar(elemento.ISBN)"
+              icon = "pi pi-minus" class="p-button-group"></button>
+    </div>
+    <button pButton
+            style="margin-left: 9vb; margin-top: 1vh; margin-bottom: 1vh;"
+            routerLink="main/cart"
+            *ngIf="User.isLogged() && CarritoItem.getIterable().length>0"
+            (click)="desactivar();"
+            label="Finalizar compra" icon="pi pi-cart-arrow-down" class="p-button-group"></button>
+  </p-sidebar>
+</div>
 <app-barra-navegacion></app-barra-navegacion>
 <app-userfooter></app-userfooter>

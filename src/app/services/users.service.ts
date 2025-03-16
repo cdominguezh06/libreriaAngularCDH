@@ -14,4 +14,12 @@ export class UsersService {
   public getInformacionPagoByUser(user : User){
     return this.httpClient.get<InformacionPago[]>(`${this.baseURL}/api/users/`+user.username+'/payments', {headers: this.options});
   }
+
+  public register(user : User){
+    return this.httpClient.post(`${this.baseURL}/api/users`, user, {headers: this.options});
+  }
+
+  update(loggedUser: User) {
+    return this.httpClient.put(`${this.baseURL}/api/users/`, loggedUser, {headers: this.options});
+  }
 }

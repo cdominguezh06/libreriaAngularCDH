@@ -11,6 +11,7 @@ import {CardModule} from "primeng/card";
 import {ReactiveFormsModule} from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import { ReuseformComponent } from './reuseform/reuseform.component';
+import {DropdownModule} from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ReuseformComponent } from './reuseform/reuseform.component';
     DockModule,
     CardModule,
     ReactiveFormsModule,
-    InputTextModule
+    InputTextModule,
+    DropdownModule
   ]
 })
 export class SharedModule { }

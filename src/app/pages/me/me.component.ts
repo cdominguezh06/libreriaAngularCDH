@@ -21,12 +21,6 @@ export class MeComponent implements OnInit{
   ngOnInit(): void {
     this.userService.getInformacionPagoByUser(User.getLoggedUser()).subscribe((informacionesPago:any) => {
       this.informacionesPago = informacionesPago;
-      informacionesPago[1] = informacionesPago[0];
-      informacionesPago[2] = informacionesPago[0];
-      informacionesPago[3] = informacionesPago[0];
-      informacionesPago[4] = informacionesPago[0];
-      informacionesPago[5] = informacionesPago[0];
-      informacionesPago[6] = informacionesPago[0];
     });
   }
 

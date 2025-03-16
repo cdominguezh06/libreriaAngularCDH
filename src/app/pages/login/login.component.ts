@@ -29,8 +29,6 @@ export class LoginComponent {
     console.log(user);
     this.loginService.login(user);
     if (user.username != '' && user.password != '') {
-      alert("Sesion iniciada correctamente");
-      this.router.navigate(['/main']);
     }
   }
 }

@@ -21,17 +21,6 @@ export class LibrosComponent implements OnInit{
     });
   }
 
-  getPortada(libro: Libro) {
-    if(!libro.imgName.includes(".jpg") && !libro.imgName.includes(".png")){
-      return `assets/iconos/libro.png`;
-    }
-    if(libro.imgName.includes("http")){
-      return libro.imgName;
-    }
-
-    return `assets/portadas/${libro.imgName}`;
-  }
-
   eliminarLibro() {
     console.log('Deleting Libro:', Libro.getSelected());
     this.librosService.deleteLibro(Libro.getSelected()).subscribe(

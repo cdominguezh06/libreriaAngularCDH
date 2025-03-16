@@ -21,9 +21,10 @@ import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { MeComponent } from './me/me.component';
 import { NuevoMetodoComponent } from './nuevo-metodo/nuevo-metodo.component';
-
+import { CartComponent } from './cart/cart.component';
+import {TableModule} from 'primeng/table';
 @NgModule({
-  declarations: [PagesComponent, LibrosComponent, AutoresComponent, TemasComponent, NuevoLibroComponent, NuevoAutorComponent, EditarLibroComponent, EditarAutorComponent, LoginComponent, SigninComponent, MeComponent, NuevoMetodoComponent],
+  declarations: [PagesComponent, LibrosComponent, AutoresComponent, TemasComponent, NuevoLibroComponent, NuevoAutorComponent, EditarLibroComponent, EditarAutorComponent, LoginComponent, SigninComponent, MeComponent, NuevoMetodoComponent, CartComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -35,7 +36,8 @@ import { NuevoMetodoComponent } from './nuevo-metodo/nuevo-metodo.component';
     ReactiveFormsModule,
     ChipsModule,
     DropdownModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    TableModule
   ],
 })
 export class PagesModule {

@@ -1,3 +1,6 @@
+import {BuyOrder} from './buyOrder';
+import {InformacionPago} from './InformacionPago';
+
 export class User {
   username: string;
   email: string;
@@ -6,7 +9,6 @@ export class User {
   direccion?: DireccionUsuario;
   password: string;
   role: UserRole;
-
   constructor(username: string, password: string) {
     this.username = username;
     this.password = password;
@@ -36,7 +38,7 @@ export class User {
   public static getJSON() : Record<string, any> {
     const user: string = <string>sessionStorage.getItem('userDetails');
     if (user == null) {
-      return { nombre: "", apellidos: "", email: "", username: "", role: UserRole.CLIENT };
+      return { nombre: "", apellidos: "", email: "", username: "",password:"", enumfield: UserRole.CLIENT, enumclass: UserRole};
     }
     const parse = JSON.parse(user);
     return {nombre: parse.nombre, apellidos: parse.apellidos, email: parse.email, username: parse.username, role: parse.role};
@@ -44,6 +46,9 @@ export class User {
   public static setLoggedUser(user : User){
     sessionStorage.removeItem('userDetails');
     sessionStorage.setItem('userDetails', JSON.stringify(user));
+  }
+  public static getStruct() : Record<string, any> {
+      return { nombre: "", apellidos: "", email: "", username: "",password:"", enumfield: UserRole.CLIENT, enumclass: UserRole };
   }
 
   public static isLogged() : boolean{
@@ -69,6 +74,7 @@ export class User {
   static logout() {
     sessionStorage.removeItem('userDetails');
   }
+
 }
 
 export class DireccionUsuario {

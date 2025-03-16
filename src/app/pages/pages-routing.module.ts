@@ -11,6 +11,8 @@ import {LoginComponent} from './login/login.component';
 import {EditarAutorComponent} from './editar-autor/editar-autor.component';
 import {MeComponent} from './me/me.component';
 import {NuevoMetodoComponent} from './nuevo-metodo/nuevo-metodo.component';
+import {SigninComponent} from './signin/signin.component';
+import {CartComponent} from './cart/cart.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,8 @@ const routes: Routes = [
       {path: 'modificar-libro' , component: EditarLibroComponent, data: {title: 'Modificar Libro'}},
       {path: 'nuevo-metodo' , component: NuevoMetodoComponent, data: {title: 'Nuevo metodo'}},
       {path: 'login', component: LoginComponent, data: {title: 'Login'}},
+      {path: 'signin', component: SigninComponent, data: {title: 'Signin'}},
+      {path: 'cart', component: CartComponent, data: {title: 'Cart'}},
       {path: 'me', component: MeComponent, data: {title: 'Me'}}
     ]
   }

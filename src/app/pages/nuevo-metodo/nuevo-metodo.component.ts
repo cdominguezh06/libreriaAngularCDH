@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {InformacionPago} from '../../core/models/InformacionPago';
 import {InformacionPagoService} from '../../services/informacion-pago.service';
+import {UsersService} from '../../services/users.service';
+import {User} from '../../core/models/user';
 
 @Component({
   selector: 'app-nuevo-metodo',
@@ -13,7 +15,7 @@ export class NuevoMetodoComponent {
   toSave : InformacionPago = new InformacionPago();
 
 
-  constructor(private informacionPagoService: InformacionPagoService) {
+  constructor(private informacionPagoService: InformacionPagoService, private usersService: UsersService) {
     console.log(this.toSave.getJSON())
   }
 
@@ -26,7 +28,7 @@ export class NuevoMetodoComponent {
     console.log(this.toSave);
     this.informacionPagoService.postInformacionPago(this.toSave).subscribe(
       res => {
-        console.log(res);
+       console.log(res)
       },
       err => {
         console.log(err);

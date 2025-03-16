@@ -2,12 +2,23 @@
   <div class="input__group">
     <div class="group_a">
       <div style="display: block; justify-content: center; margin-bottom: 20px; margin-left: 40%; padding-top: 6%;">
-        <div *ngFor="let item of iterable| keyvalue">
+        <div *ngFor="let item of getItems()| keyvalue">
           <div class="p_input_group" style="padding-bottom: 10px">
-                <span class="p_inputgroup-addon">
-                  <i class="pi pi-arrow-right"></i>
-                </span>
-            <input type="text" pInputText placeholder="{{item.key}}" formControlName="{{item.key}}">
+
+            <div *ngIf="isEnum(item.key); else notEnum">
+              <span class="p_inputgroup-addon" style="margin-right: 8%">
+                <i class="pi pi-arrow-right"></i>
+              </span>
+              <select [formControlName]="item.key">
+                <option *ngFor="let option of enumOptions" [value]="option.value">{{ option.key }}</option>
+              </select>
+            </div>
+            <ng-template #notEnum>
+              <span class="p_inputgroup-addon">
+                <i class="pi pi-arrow-right"></i>
+              </span>
+              <input type="text" pInputText placeholder="{{item.key}}" formControlName="{{item.key}}">
+            </ng-template>
           </div>
         </div>
         <button style="margin-left: 5%"
