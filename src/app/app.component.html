@@ -9,6 +9,10 @@
       <button pButton
               (click)="restar(elemento.ISBN)"
               icon = "pi pi-minus" class="p-button-group"></button>
+      <button pButton
+              (click)="sumar(elemento.ISBN)"
+              [disabled]="isCantidadSuperada(elemento.ISBN, elemento.cantidad)"
+              icon = "pi pi-plus" class="p-button-success"></button>
     </div>
     <button pButton
             style="margin-left: 9vb; margin-top: 1vh; margin-bottom: 1vh;"

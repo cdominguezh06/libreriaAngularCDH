@@ -4,29 +4,18 @@
       <div style="display: block; justify-content: center; margin-bottom: 20px; margin-left: 40%; padding-top: 6%;">
         <div *ngFor="let item of getItems()| keyvalue">
           <div class="p_input_group" style="padding-bottom: 10px">
-
-            <div *ngIf="isEnum(item.key); else notEnum">
-              <span class="p_inputgroup-addon" style="margin-right: 8%">
-                <i class="pi pi-arrow-right"></i>
-              </span>
-              <select [formControlName]="item.key">
-                <option *ngFor="let option of enumOptions" [value]="option.value">{{ option.key }}</option>
-              </select>
-            </div>
-            <ng-template #notEnum>
               <span class="p_inputgroup-addon">
                 <i class="pi pi-arrow-right"></i>
               </span>
               <input type="text" pInputText placeholder="{{item.key}}" formControlName="{{item.key}}">
-            </ng-template>
           </div>
         </div>
-        <button style="margin-left: 5%"
+        <button style="margin-left: 9%"
                 [disabled]="!form.valid"
                 pButton
                 (click)="return()"
                 class="p-button-success"
-                label="Guardar metodo"></button>
+                label="Guardar"></button>
       </div>
     </div>
   </div>

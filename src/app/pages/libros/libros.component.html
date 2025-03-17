@@ -3,7 +3,7 @@
   <app-barra-cierre></app-barra-cierre>
   <div class="container">
     <br>
-    <div class="card_v" *ngFor="let libro of misLibros" (click)="setSelection(libro)">
+    <div class="card_v" *ngFor="let libro of LibrosComponent.misLibros" (click)="setSelection(libro)">
       <app-libro-card [libro]="libro"></app-libro-card>
     </div>
     <div class="position_btn_nuevo">

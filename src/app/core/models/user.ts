@@ -48,7 +48,7 @@ export class User {
     sessionStorage.setItem('userDetails', JSON.stringify(user));
   }
   public static getStruct() : Record<string, any> {
-      return { nombre: "", apellidos: "", email: "", username: "",password:"", enumfield: UserRole.CLIENT, enumclass: UserRole };
+      return { nombre: "", apellidos: "", email: "", username: "",password:""};
   }
 
   public static isLogged() : boolean{

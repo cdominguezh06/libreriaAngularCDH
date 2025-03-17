@@ -11,13 +11,13 @@ import {User} from '../../core/models/user';
   styleUrl: './libros.component.css'
 })
 export class LibrosComponent implements OnInit{
-  misLibros : Libro[] = [];
+  static misLibros : Libro[] = [];
   constructor(private librosService: LibrosService, private router: Router) {
 
   }
   ngOnInit(): void {
     this.librosService.getLibros().subscribe((libros:any) => {
-      this.misLibros = libros;
+      LibrosComponent.misLibros = libros;
     });
   }
 
@@ -39,6 +39,15 @@ export class LibrosComponent implements OnInit{
     console.log('Selected Libro:', Libro.getSelected());
   }
 
+  static getLibroByISBN(elemento: string) {
+    for (let i = 0; i <  LibrosComponent.misLibros.length; i++) {
+      if (LibrosComponent.misLibros[i].ISBN == elemento) {
+        return LibrosComponent.misLibros[i];
+      }
+    }
+    return null;
+  }
   protected readonly User = User;
   protected readonly Libro = Libro;
+  protected readonly LibrosComponent = LibrosComponent;
 }

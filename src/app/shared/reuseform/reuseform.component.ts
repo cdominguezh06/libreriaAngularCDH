@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {UserRole} from '../../core/models/user';
 
 @Component({
   selector: 'app-reuseform',
@@ -29,27 +30,10 @@ export class ReuseformComponent implements OnInit {
     this.salida.emit(this.form.value);
   }
 
-  isEnum(key: string) : boolean {
-    if (key === 'enumfield'){
-      this.enumOptions = this.getEnum();
-      return true
-    }
-    return false;
-  }
-
-  getEnum(): { key: string; value: any }[] {
-    const enumObj = this.iterable['enumclass'];
-    const map = Object.keys(enumObj)
-      .filter(key => isNaN(Number(key))) // Filtrar las claves que no son números
-      .map(key => ({ key, value: enumObj[key] }))
-    return map;
-  }
   getItems() {
     const retorno : Record<string, any>= {};
     for (let key in this.iterable) {
-      if(key !== 'enumclass'){
         retorno[key] = this.iterable[key];
-      }
     }
     return retorno;
   }

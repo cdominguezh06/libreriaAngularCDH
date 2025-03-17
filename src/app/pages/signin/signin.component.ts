@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {User} from '../../core/models/user';
+import {User, UserRole} from '../../core/models/user';
 import {UsersService} from '../../services/users.service';
 import {Router} from '@angular/router';
 
@@ -19,13 +19,13 @@ export class SigninComponent {
   }
 
   guardarMetodo($event: Record<string, any>) {
-    const {nombre, apellidos, email, username, password,enumfield} = $event;
+    const {nombre, apellidos, email, username, password} = $event;
     this.user.username = username;
     this.user.password = password;
     this.user.email = email;
     this.user.nombre = nombre;
     this.user.apellidos = apellidos;
-    this.user.role = enumfield;
+    this.user.role = UserRole.CLIENT;
     console.log(this.user)
     this.usersService.register(this.user).subscribe({
       next: () => {
