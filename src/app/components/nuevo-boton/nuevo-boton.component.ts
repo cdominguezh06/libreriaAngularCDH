@@ -13,6 +13,7 @@ export class NuevoBotonComponent implements OnInit{
   protected readonly User = User;
   @Input() routerLink: String[]=[];
   @Input() label: string="";
+  @Input() ifcondition: boolean = User.isAdmin();
 
   constructor() {
   }

@@ -8,6 +8,6 @@
     <div class="cards_container">
       <app-reusecard *ngFor="let informacion of informacionesPago" [iterable]="informacion" [width]="'36vb'"></app-reusecard>
     </div>
-    <app-nuevo-boton class="agregarMetodo" [label]="'Agregar metodo'" [routerLink]="['/main/nuevo-metodo']"></app-nuevo-boton>
+    <app-nuevo-boton class="agregarMetodo" [label]="'Agregar metodo'" [routerLink]="['/main/nuevo-metodo']" [ifcondition]="true"></app-nuevo-boton>
   </div>
 </div>

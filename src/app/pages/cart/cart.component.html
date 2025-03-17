@@ -1,14 +1,36 @@
-<div class="animate__animated animated__fadeIn animate__faster">
+<div class="animate__animated animated__fadeIn animate__faster" xmlns="http://www.w3.org/1999/html">
   <app-barra-cierre></app-barra-cierre>
   <div class="container">
-    <h1>Factura</h1>
     <div class="cards_container">
-      <app-reusecard *ngFor="let elemento of CarritoItem.getIterable()" [iterable]="elemento"
-                     [width]="'36vb'"></app-reusecard>
+      <table>
+        <thead>
+        <tr>
+          <th>ISBN</th>
+          <th>Nombre</th>
+          <th>Cantidad</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let elemento of CarritoItem.getIterable()">
+          <td>{{ elemento.ISBN }}</td>
+          <td>{{ elemento.Nombre }}</td>
+          <td>{{ elemento.cantidad }}</td>
+        </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+        <tr>
+          <td>Total: {{ calcularTotal() }}€</td>
+        </tr>
+        </thead>
+      </table>
+      <!--      <app-reusecard *ngFor="let elemento of CarritoItem.getIterable()" [iterable]="elemento"-->
+      <!--                     [width]="'36vb'"></app-reusecard>-->
     </div>
-    <h1 style="margin-left: 47%">Total: {{calcularTotal()}}€</h1>
     <button
-      style="margin-left: 45%"
+      style="margin-left: 45%;
+  margin-top:20px;"
       [disabled]="CarritoItem.getIterable().length<1"
       pButton
       (click)="pagar()"
